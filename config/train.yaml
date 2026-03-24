@@ -1,0 +1,38 @@
+io:
+  fresh_data_path: "datasets/train_prepared_new.zip"
+  aged_data_path: "datasets/train_prepared_old.zip"
+  target_aging_path: null
+
+train:
+  batch_size: 8192
+  n_epochs: 2000
+  lr: 0.0002
+  betas: [0.5, 0.999]
+  save_interval: 5
+  seed: 42
+  use_mask: false
+  make_old_to_new: false
+  precision: "bf16"
+  metrics_interval: 20
+
+data:
+  event_column: "event"
+  x_column: "x"
+  y_column: "y"
+  z_column: "z"
+  fresh_energy_column: "E_cal"
+  aged_energy_column: "E_aged_cal"
+  target_value_column: "aging_factor"
+  shape_z: 40
+  shape_x: 24
+  shape_y: 24
+
+comet:
+  enabled: false
+  api_key: null
+  project_name: null
+  workspace: null
+
+misc:
+  debug: false
+  debug_max_events: 128
